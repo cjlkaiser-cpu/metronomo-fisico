@@ -38,20 +38,20 @@
 
         /* Header */
         .header {
-            padding: 15px 20px;
+            padding: 12px 20px;
             text-align: center;
             background: linear-gradient(180deg, #1a1a1a 0%, transparent 100%);
         }
 
         .header h1 {
             font-family: 'Covered By Your Grace', cursive;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: normal;
             color: rgba(255,255,255,0.95);
         }
 
         .header .subtitle {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: #666;
             margin-top: 2px;
         }
@@ -62,8 +62,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 10px;
-            min-height: 300px;
+            padding: 8px;
+            min-height: 280px;
         }
 
         #canvas {
@@ -76,75 +76,68 @@
 
         /* Controls */
         .controls {
-            padding: 15px 20px 25px;
+            padding: 12px 16px 20px;
             background: linear-gradient(180deg, transparent 0%, #1a1a1a 30%);
+            overflow-y: auto;
+            max-height: 55vh;
         }
 
-        /* BPM Display */
-        .bpm-display {
-            text-align: center;
-            margin-bottom: 20px;
+        /* Slider group */
+        .slider-group {
+            margin-bottom: 12px;
         }
 
-        .bpm-value {
-            font-family: 'Covered By Your Grace', cursive;
-            font-size: 4rem;
-            line-height: 1;
-            color: #fbbf24;
-        }
-
-        .bpm-label {
-            font-size: 0.9rem;
-            color: #888;
-            margin-top: 5px;
-        }
-
-        /* Slider */
-        .slider-container {
-            margin-bottom: 20px;
-        }
-
-        .slider-labels {
+        .slider-header {
             display: flex;
             justify-content: space-between;
-            font-size: 0.7rem;
-            color: #555;
-            margin-bottom: 8px;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+
+        .slider-label {
+            font-size: 0.75rem;
+            color: #888;
+        }
+
+        .slider-value {
+            font-family: 'Covered By Your Grace', cursive;
+            font-size: 1.1rem;
+            color: #fbbf24;
         }
 
         input[type="range"] {
             width: 100%;
-            height: 8px;
+            height: 6px;
             background: #333;
-            border-radius: 4px;
+            border-radius: 3px;
             outline: none;
             -webkit-appearance: none;
         }
 
         input[type="range"]::-webkit-slider-thumb {
             -webkit-appearance: none;
-            width: 28px;
-            height: 28px;
+            width: 24px;
+            height: 24px;
             background: #fbbf24;
             border-radius: 50%;
             cursor: pointer;
-            box-shadow: 0 2px 10px rgba(251, 191, 36, 0.4);
+            box-shadow: 0 2px 8px rgba(251, 191, 36, 0.4);
         }
 
         /* Buttons */
         .buttons {
             display: flex;
-            gap: 12px;
-            margin-bottom: 15px;
+            gap: 10px;
+            margin-bottom: 12px;
         }
 
         button {
             flex: 1;
-            padding: 16px;
-            font-size: 1.1rem;
+            padding: 14px;
+            font-size: 1rem;
             font-weight: 600;
             border: none;
-            border-radius: 12px;
+            border-radius: 10px;
             cursor: pointer;
             transition: transform 0.1s, opacity 0.2s;
         }
@@ -166,20 +159,21 @@
         /* Toggle switches */
         .toggles {
             display: flex;
-            gap: 15px;
+            gap: 10px;
             flex-wrap: wrap;
+            margin-bottom: 12px;
         }
 
         .toggle {
             display: flex;
             align-items: center;
-            gap: 10px;
-            padding: 10px 15px;
+            gap: 8px;
+            padding: 8px 12px;
             background: rgba(255,255,255,0.05);
             border-radius: 8px;
             cursor: pointer;
             flex: 1;
-            min-width: 140px;
+            min-width: 120px;
         }
 
         .toggle input {
@@ -187,19 +181,20 @@
         }
 
         .toggle-switch {
-            width: 44px;
-            height: 24px;
+            width: 36px;
+            height: 20px;
             background: #333;
-            border-radius: 12px;
+            border-radius: 10px;
             position: relative;
             transition: background 0.2s;
+            flex-shrink: 0;
         }
 
         .toggle-switch::after {
             content: '';
             position: absolute;
-            width: 20px;
-            height: 20px;
+            width: 16px;
+            height: 16px;
             background: #fff;
             border-radius: 50%;
             top: 2px;
@@ -212,59 +207,63 @@
         }
 
         .toggle input:checked + .toggle-switch::after {
-            transform: translateX(20px);
+            transform: translateX(16px);
         }
 
         .toggle-label {
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             color: #aaa;
         }
 
         /* Info panel */
         .info-panel {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid #222;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-bottom: 12px;
         }
 
         .info-item {
             text-align: center;
-            padding: 8px;
+            padding: 8px 4px;
             background: rgba(255,255,255,0.03);
             border-radius: 6px;
         }
 
         .info-item .label {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             color: #666;
             margin-bottom: 2px;
         }
 
         .info-item .value {
             font-family: 'Covered By Your Grace', cursive;
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: #fff;
         }
 
         /* Energy bars */
-        .energy-bars {
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid #222;
+        .energy-section {
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 0.7rem;
+            color: #666;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .energy-bar {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .energy-bar .bar-header {
             display: flex;
             justify-content: space-between;
-            font-size: 0.7rem;
-            margin-bottom: 4px;
+            font-size: 0.65rem;
+            margin-bottom: 3px;
         }
 
         .energy-bar .bar-header .name {
@@ -273,20 +272,20 @@
 
         .energy-bar .bar-header .val {
             font-family: 'Covered By Your Grace', cursive;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #fff;
         }
 
         .energy-bar .bar-track {
-            height: 6px;
+            height: 5px;
             background: #222;
-            border-radius: 3px;
+            border-radius: 2.5px;
             overflow: hidden;
         }
 
         .energy-bar .bar-fill {
             height: 100%;
-            border-radius: 3px;
+            border-radius: 2.5px;
             transition: width 0.05s;
         }
 
@@ -294,25 +293,40 @@
         .bar-fill.pe { background: linear-gradient(90deg, #60a5fa, #3b82f6); }
         .bar-fill.total { background: linear-gradient(90deg, #4ade80, #22c55e); }
 
-        /* Equation */
-        .equation {
-            text-align: center;
-            margin-top: 15px;
-            padding: 12px;
+        /* Equations */
+        .equations {
             background: rgba(255,255,255,0.03);
             border-radius: 8px;
+            padding: 10px;
+        }
+
+        .equation-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .equation-row:last-child {
+            border-bottom: none;
+        }
+
+        .equation-name {
+            font-size: 0.65rem;
+            color: #666;
         }
 
         .equation-text {
             font-family: 'Covered By Your Grace', cursive;
-            font-size: 1.2rem;
-            color: rgba(255,255,255,0.8);
+            font-size: 1rem;
+            color: rgba(255,255,255,0.9);
         }
 
-        .equation-desc {
-            font-size: 0.7rem;
-            color: #555;
-            margin-top: 4px;
+        .equation-value {
+            font-family: 'Covered By Your Grace', cursive;
+            font-size: 0.9rem;
+            color: #fbbf24;
         }
 
         /* Desktop layout */
@@ -320,7 +334,7 @@
             .app {
                 flex-direction: row;
                 padding: 20px;
-                gap: 30px;
+                gap: 25px;
                 justify-content: center;
                 align-items: flex-start;
             }
@@ -339,46 +353,47 @@
 
             #canvas {
                 width: 500px;
-                height: 550px;
+                height: 500px;
             }
 
             .controls {
-                width: 350px;
-                padding: 25px;
+                width: 380px;
+                padding: 20px;
                 background: #1a1a1a;
                 border-radius: 12px;
+                max-height: 90vh;
             }
 
             .controls::before {
                 content: 'Metrónomo Físico';
                 display: block;
                 font-family: 'Covered By Your Grace', cursive;
-                font-size: 1.6rem;
-                margin-bottom: 5px;
+                font-size: 1.5rem;
+                margin-bottom: 4px;
             }
 
             .controls::after {
                 content: 'Simulación de péndulo simple';
                 display: block;
-                font-size: 0.75rem;
+                font-size: 0.7rem;
                 color: #666;
-                margin-bottom: 20px;
-                padding-bottom: 15px;
+                margin-bottom: 15px;
+                padding-bottom: 12px;
                 border-bottom: 1px solid #333;
-            }
-        }
-
-        /* Small phones */
-        @media (max-height: 700px) {
-            .bpm-value {
-                font-size: 3rem;
             }
 
             .info-panel {
                 grid-template-columns: repeat(4, 1fr);
             }
+        }
 
-            .energy-bars {
+        /* Small phones */
+        @media (max-height: 700px) {
+            .controls {
+                max-height: 50vh;
+            }
+
+            .equations {
                 display: none;
             }
         }
@@ -398,19 +413,31 @@
         </div>
 
         <div class="controls">
-            <div class="bpm-display">
-                <div class="bpm-value" id="bpmValue">60</div>
-                <div class="bpm-label">BPM (pulsos por minuto)</div>
+            <!-- Length slider -->
+            <div class="slider-group">
+                <div class="slider-header">
+                    <span class="slider-label">Longitud de cuerda (l)</span>
+                    <span class="slider-value" id="lengthDisplay">0.25 m</span>
+                </div>
+                <input type="range" id="lengthSlider" min="0.1" max="2" step="0.01" value="0.25">
             </div>
 
-            <div class="slider-container">
-                <div class="slider-labels">
-                    <span>20 BPM</span>
-                    <span>Largo / Lento</span>
-                    <span>Corto / Rápido</span>
-                    <span>200 BPM</span>
+            <!-- Gravity slider -->
+            <div class="slider-group">
+                <div class="slider-header">
+                    <span class="slider-label">Gravedad (g)</span>
+                    <span class="slider-value" id="gravityDisplay">9.8 m/s²</span>
                 </div>
-                <input type="range" id="bpmSlider" min="20" max="200" value="60">
+                <input type="range" id="gravitySlider" min="1" max="25" step="0.1" value="9.8">
+            </div>
+
+            <!-- Amplitude slider -->
+            <div class="slider-group">
+                <div class="slider-header">
+                    <span class="slider-label">Ángulo inicial (θ₀)</span>
+                    <span class="slider-value" id="amplitudeDisplay">30°</span>
+                </div>
+                <input type="range" id="amplitudeSlider" min="5" max="90" step="1" value="30">
             </div>
 
             <div class="buttons">
@@ -429,32 +456,38 @@
                     <span class="toggle-switch"></span>
                     <span class="toggle-label">📈 Trayectoria</span>
                 </label>
+                <label class="toggle">
+                    <input type="checkbox" id="velocityToggle" checked>
+                    <span class="toggle-switch"></span>
+                    <span class="toggle-label">➡️ Velocidad</span>
+                </label>
             </div>
 
             <div class="info-panel">
                 <div class="info-item">
-                    <div class="label">Longitud</div>
-                    <div class="value" id="lengthVal">0.25 m</div>
-                </div>
-                <div class="info-item">
-                    <div class="label">Período</div>
-                    <div class="value" id="periodVal">1.00 s</div>
-                </div>
-                <div class="info-item">
-                    <div class="label">Ángulo</div>
+                    <div class="label">Ángulo θ</div>
                     <div class="value" id="angleVal">30°</div>
                 </div>
                 <div class="info-item">
-                    <div class="label">Beats</div>
-                    <div class="value" id="beatCount">0</div>
+                    <div class="label">Vel. angular ω</div>
+                    <div class="value" id="omegaVal">0.00</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">Período T</div>
+                    <div class="value" id="periodVal">1.00 s</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">BPM</div>
+                    <div class="value" id="bpmVal">60</div>
                 </div>
             </div>
 
-            <div class="energy-bars">
+            <div class="energy-section">
+                <div class="section-title">Energías (por unidad de masa)</div>
                 <div class="energy-bar">
                     <div class="bar-header">
-                        <span class="name">T (cinética)</span>
-                        <span class="val" id="keVal">0.00</span>
+                        <span class="name">T = ½l²θ̇²  (cinética)</span>
+                        <span class="val" id="keVal">0.00 J/kg</span>
                     </div>
                     <div class="bar-track">
                         <div class="bar-fill ke" id="keBar"></div>
@@ -462,18 +495,46 @@
                 </div>
                 <div class="energy-bar">
                     <div class="bar-header">
-                        <span class="name">V (potencial)</span>
-                        <span class="val" id="peVal">0.00</span>
+                        <span class="name">V = gl(1-cosθ)  (potencial)</span>
+                        <span class="val" id="peVal">0.00 J/kg</span>
                     </div>
                     <div class="bar-track">
                         <div class="bar-fill pe" id="peBar"></div>
                     </div>
                 </div>
+                <div class="energy-bar">
+                    <div class="bar-header">
+                        <span class="name">E = T + V  (total)</span>
+                        <span class="val" id="totalVal">0.00 J/kg</span>
+                    </div>
+                    <div class="bar-track">
+                        <div class="bar-fill total" id="totalBar"></div>
+                    </div>
+                </div>
             </div>
 
-            <div class="equation">
-                <div class="equation-text">T = 2π√(l/g)</div>
-                <div class="equation-desc">Período del péndulo simple</div>
+            <div class="equations">
+                <div class="section-title">Lagrangiano</div>
+                <div class="equation-row">
+                    <span class="equation-name">Definición</span>
+                    <span class="equation-text">L = T − V</span>
+                </div>
+                <div class="equation-row">
+                    <span class="equation-name">Péndulo</span>
+                    <span class="equation-text">L = ½l²θ̇² − gl(1−cosθ)</span>
+                </div>
+                <div class="equation-row">
+                    <span class="equation-name">Valor actual</span>
+                    <span class="equation-value" id="lagrangianVal">L = 0.00</span>
+                </div>
+                <div class="equation-row">
+                    <span class="equation-name">Euler-Lagrange</span>
+                    <span class="equation-text">d/dt(∂L/∂θ̇) = ∂L/∂θ</span>
+                </div>
+                <div class="equation-row">
+                    <span class="equation-name">Movimiento</span>
+                    <span class="equation-text">θ̈ + (g/l)sinθ = 0</span>
+                </div>
             </div>
         </div>
     </div>
@@ -485,7 +546,7 @@
         // Responsive canvas
         function setupCanvas() {
             const container = canvas.parentElement;
-            const size = Math.min(container.clientWidth - 20, container.clientHeight - 20, 500);
+            const size = Math.min(container.clientWidth - 16, container.clientHeight - 16, 500);
 
             const dpr = window.devicePixelRatio || 1;
             canvas.width = size * dpr;
@@ -503,20 +564,18 @@
             if (!running) draw();
         });
 
-        // Physics constants
-        const g = 9.8;  // Gravity m/s²
-        const amplitude = 30 * Math.PI / 180;  // 30 degrees in radians
-
-        // State
-        let length = 0.25;  // Will be calculated from BPM
+        // Physics
+        let g = 9.8;
+        let length = 0.25;
+        let amplitude = 30 * Math.PI / 180;
         let theta = amplitude;
         let omega = 0;
         let running = false;
         let lastTime = 0;
         let prevOmega = 0;
-        let beatCount = 0;
         let trail = [];
         let showTrail = false;
+        let showVelocity = true;
         let soundEnabled = true;
         let maxEnergy = 1;
 
@@ -541,7 +600,6 @@
             osc.connect(gain);
             gain.connect(audioCtx.destination);
 
-            // Wood block sound
             osc.frequency.setValueAtTime(1200, audioCtx.currentTime);
             osc.frequency.exponentialRampToValueAtTime(600, audioCtx.currentTime + 0.015);
 
@@ -552,43 +610,38 @@
             osc.stop(audioCtx.currentTime + 0.1);
         }
 
-        // Calculate length from BPM
-        // Period T = 60/BPM (for 2 beats per period, one each direction)
-        // T = 2π√(l/g) => l = g(T/2π)²
-        function lengthFromBPM(bpm) {
-            const T = 60 / bpm * 2;  // Full period (2 beats)
-            return g * Math.pow(T / (2 * Math.PI), 2);
-        }
-
-        // BPM from length
-        function bpmFromLength(l) {
-            const T = 2 * Math.PI * Math.sqrt(l / g);
-            return 60 / (T / 2);
-        }
-
         // Update display
         function updateDisplay() {
-            const T = 2 * Math.PI * Math.sqrt(length / g);
-            const bpm = Math.round(bpmFromLength(length));
+            const T_period = 2 * Math.PI * Math.sqrt(length / g);
+            const bpm = Math.round(60 / (T_period / 2));
 
-            document.getElementById('bpmValue').textContent = bpm;
-            document.getElementById('lengthVal').textContent = length.toFixed(2) + ' m';
-            document.getElementById('periodVal').textContent = T.toFixed(2) + ' s';
-            document.getElementById('angleVal').textContent = Math.round(theta * 180 / Math.PI) + '°';
-            document.getElementById('beatCount').textContent = beatCount;
+            document.getElementById('lengthDisplay').textContent = length.toFixed(2) + ' m';
+            document.getElementById('gravityDisplay').textContent = g.toFixed(1) + ' m/s²';
+            document.getElementById('amplitudeDisplay').textContent = Math.round(amplitude * 180 / Math.PI) + '°';
 
-            // Energy
+            document.getElementById('angleVal').textContent = (theta * 180 / Math.PI).toFixed(1) + '°';
+            document.getElementById('omegaVal').textContent = omega.toFixed(2) + ' rad/s';
+            document.getElementById('periodVal').textContent = T_period.toFixed(2) + ' s';
+            document.getElementById('bpmVal').textContent = bpm;
+
+            // Energies (per unit mass)
             const KE = 0.5 * length * length * omega * omega;
             const PE = g * length * (1 - Math.cos(theta));
             const total = KE + PE;
+            const L = KE - PE;  // Lagrangian
 
             if (total > maxEnergy) maxEnergy = total;
             const ref = maxEnergy > 0 ? maxEnergy : 1;
 
-            document.getElementById('keVal').textContent = KE.toFixed(3);
-            document.getElementById('peVal').textContent = PE.toFixed(3);
+            document.getElementById('keVal').textContent = KE.toFixed(3) + ' J/kg';
+            document.getElementById('peVal').textContent = PE.toFixed(3) + ' J/kg';
+            document.getElementById('totalVal').textContent = total.toFixed(3) + ' J/kg';
             document.getElementById('keBar').style.width = (KE / ref * 100) + '%';
             document.getElementById('peBar').style.width = (PE / ref * 100) + '%';
+            document.getElementById('totalBar').style.width = (total / ref * 100) + '%';
+
+            // Lagrangian
+            document.getElementById('lagrangianVal').textContent = 'L = ' + L.toFixed(3);
         }
 
         // Simulation
@@ -618,7 +671,6 @@
             if (prevOmega !== 0) {
                 if ((prevOmega > 0 && omega <= 0) || (prevOmega < 0 && omega >= 0)) {
                     playClick();
-                    beatCount++;
                 }
             }
             prevOmega = omega;
@@ -632,14 +684,13 @@
         function draw() {
             const size = canvasSize;
             const cx = size / 2;
-            const pivotY = size * 0.15;
-            const scale = size * 0.3;  // Visual scale
+            const pivotY = size * 0.12;
 
             ctx.fillStyle = '#1a1a1a';
             ctx.fillRect(0, 0, size, size);
 
-            // Bob position
-            const visualLength = Math.min(length * 400, size * 0.6);  // Scale for display
+            // Scale length for display
+            const visualLength = Math.min(length * 250, size * 0.65);
             const bobX = cx + visualLength * Math.sin(theta);
             const bobY = pivotY + visualLength * Math.cos(theta);
 
@@ -669,7 +720,7 @@
                 }
             }
 
-            // Reference line
+            // Reference line (vertical)
             ctx.setLineDash([4, 4]);
             ctx.beginPath();
             ctx.moveTo(cx, pivotY);
@@ -682,19 +733,24 @@
             // Angle arc
             if (Math.abs(theta) > 0.03) {
                 ctx.beginPath();
-                const arcR = 30;
+                const arcR = 25;
                 const start = Math.PI / 2;
                 const end = Math.PI / 2 - theta;
                 ctx.arc(cx, pivotY, arcR, Math.min(start, end), Math.max(start, end));
                 ctx.strokeStyle = 'rgba(255,255,255,0.4)';
                 ctx.lineWidth = 1.5;
                 ctx.stroke();
+
+                // Theta label
+                ctx.font = "14px 'Covered By Your Grace'";
+                ctx.fillStyle = 'rgba(255,255,255,0.6)';
+                ctx.fillText('θ', cx + 35, pivotY + 20);
             }
 
             // Support bar
             ctx.beginPath();
-            ctx.moveTo(cx - 35, pivotY);
-            ctx.lineTo(cx + 35, pivotY);
+            ctx.moveTo(cx - 30, pivotY);
+            ctx.lineTo(cx + 30, pivotY);
             ctx.strokeStyle = 'rgba(255,255,255,0.8)';
             ctx.lineWidth = 4;
             ctx.lineCap = 'round';
@@ -702,7 +758,7 @@
 
             // Pivot
             ctx.beginPath();
-            ctx.arc(cx, pivotY, 6, 0, Math.PI * 2);
+            ctx.arc(cx, pivotY, 5, 0, Math.PI * 2);
             ctx.fillStyle = '#fbbf24';
             ctx.fill();
 
@@ -711,12 +767,20 @@
             ctx.moveTo(cx, pivotY);
             ctx.lineTo(bobX, bobY);
             ctx.strokeStyle = 'rgba(255,255,255,0.9)';
-            ctx.lineWidth = 3;
+            ctx.lineWidth = 2.5;
             ctx.stroke();
 
+            // Length label
+            const midX = (cx + bobX) / 2;
+            const midY = (pivotY + bobY) / 2;
+            ctx.font = "14px 'Covered By Your Grace'";
+            ctx.fillStyle = 'rgba(255,255,255,0.5)';
+            const labelOffset = theta > 0 ? -12 : 12;
+            ctx.fillText('l', midX + labelOffset, midY);
+
             // Bob
-            const bobRadius = Math.max(18, size * 0.05);
-            const gradient = ctx.createRadialGradient(bobX - 5, bobY - 5, 0, bobX, bobY, bobRadius);
+            const bobRadius = Math.max(16, size * 0.045);
+            const gradient = ctx.createRadialGradient(bobX - 4, bobY - 4, 0, bobX, bobY, bobRadius);
             gradient.addColorStop(0, '#fbbf24');
             gradient.addColorStop(0.5, '#f59e0b');
             gradient.addColorStop(1, '#b45309');
@@ -726,28 +790,108 @@
             ctx.fillStyle = gradient;
             ctx.fill();
 
+            // Velocity vector
+            if (showVelocity && Math.abs(omega) > 0.01) {
+                // Tangential velocity: v = l * omega
+                const v = length * omega;
+                const vScale = 40;  // Visual scale
+
+                // Tangent direction (perpendicular to rod)
+                const tangentX = Math.cos(theta);
+                const tangentY = -Math.sin(theta);
+
+                const vx = bobX + v * vScale * tangentX;
+                const vy = bobY + v * vScale * tangentY;
+
+                // Arrow shaft
+                ctx.beginPath();
+                ctx.moveTo(bobX, bobY);
+                ctx.lineTo(vx, vy);
+                ctx.strokeStyle = '#4ade80';
+                ctx.lineWidth = 2.5;
+                ctx.stroke();
+
+                // Arrowhead
+                const arrowLen = 8;
+                const arrowAngle = Math.atan2(vy - bobY, vx - bobX);
+                ctx.beginPath();
+                ctx.moveTo(vx, vy);
+                ctx.lineTo(vx - arrowLen * Math.cos(arrowAngle - 0.4), vy - arrowLen * Math.sin(arrowAngle - 0.4));
+                ctx.moveTo(vx, vy);
+                ctx.lineTo(vx - arrowLen * Math.cos(arrowAngle + 0.4), vy - arrowLen * Math.sin(arrowAngle + 0.4));
+                ctx.strokeStyle = '#4ade80';
+                ctx.lineWidth = 2.5;
+                ctx.stroke();
+
+                // Velocity label
+                ctx.font = "bold 12px 'Inter'";
+                ctx.fillStyle = '#4ade80';
+                ctx.fillText('v⃗', vx + 5, vy - 5);
+            }
+
+            // Gravity vector (at pivot for reference)
+            const gScale = 3;
+            const gLen = g * gScale;
+            ctx.beginPath();
+            ctx.moveTo(cx - 50, pivotY + 15);
+            ctx.lineTo(cx - 50, pivotY + 15 + gLen);
+            ctx.strokeStyle = '#60a5fa';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            // G arrowhead
+            const gArrowLen = 6;
+            ctx.beginPath();
+            ctx.moveTo(cx - 50, pivotY + 15 + gLen);
+            ctx.lineTo(cx - 50 - 4, pivotY + 15 + gLen - gArrowLen);
+            ctx.moveTo(cx - 50, pivotY + 15 + gLen);
+            ctx.lineTo(cx - 50 + 4, pivotY + 15 + gLen - gArrowLen);
+            ctx.stroke();
+
+            ctx.font = "bold 11px 'Inter'";
+            ctx.fillStyle = '#60a5fa';
+            ctx.fillText('g⃗', cx - 45, pivotY + 25 + gLen);
+
             // Flash on beat
             if (Math.abs(omega) < 0.3 && running) {
                 ctx.beginPath();
-                ctx.arc(bobX, bobY, bobRadius + 8, 0, Math.PI * 2);
+                ctx.arc(bobX, bobY, bobRadius + 6, 0, Math.PI * 2);
                 ctx.strokeStyle = 'rgba(251, 191, 36, 0.5)';
                 ctx.lineWidth = 3;
                 ctx.stroke();
             }
 
-            // BPM text on canvas (mobile)
-            if (size < 400) {
-                ctx.font = "bold 24px 'Covered By Your Grace'";
-                ctx.fillStyle = 'rgba(255,255,255,0.3)';
-                ctx.textAlign = 'center';
-                ctx.fillText(Math.round(bpmFromLength(length)) + ' BPM', cx, size - 20);
-            }
+            // Period and BPM on canvas
+            const T_period = 2 * Math.PI * Math.sqrt(length / g);
+            const bpm = Math.round(60 / (T_period / 2));
+
+            ctx.font = "20px 'Covered By Your Grace'";
+            ctx.fillStyle = 'rgba(255,255,255,0.4)';
+            ctx.textAlign = 'center';
+            ctx.fillText(bpm + ' BPM', cx, size - 15);
+            ctx.textAlign = 'left';
         }
 
         // Controls
-        document.getElementById('bpmSlider').addEventListener('input', (e) => {
-            const bpm = parseInt(e.target.value);
-            length = lengthFromBPM(bpm);
+        document.getElementById('lengthSlider').addEventListener('input', (e) => {
+            length = parseFloat(e.target.value);
+            maxEnergy = 1;
+            updateDisplay();
+            if (!running) draw();
+        });
+
+        document.getElementById('gravitySlider').addEventListener('input', (e) => {
+            g = parseFloat(e.target.value);
+            maxEnergy = 1;
+            updateDisplay();
+            if (!running) draw();
+        });
+
+        document.getElementById('amplitudeSlider').addEventListener('input', (e) => {
+            amplitude = parseInt(e.target.value) * Math.PI / 180;
+            if (!running) {
+                theta = amplitude;
+            }
             maxEnergy = 1;
             updateDisplay();
             if (!running) draw();
@@ -761,7 +905,6 @@
                 omega = 0;
                 prevOmega = 0;
                 lastTime = performance.now();
-                beatCount = 0;
                 trail = [];
                 requestAnimationFrame(simulate);
             }
@@ -772,6 +915,7 @@
             theta = amplitude;
             omega = 0;
             trail = [];
+            maxEnergy = 1;
             draw();
             updateDisplay();
         });
@@ -787,13 +931,17 @@
             if (!running) draw();
         });
 
+        document.getElementById('velocityToggle').addEventListener('change', (e) => {
+            showVelocity = e.target.checked;
+            if (!running) draw();
+        });
+
         // Touch to start (for audio context)
         document.body.addEventListener('touchstart', () => {
             initAudio();
         }, { once: true });
 
         // Init
-        length = lengthFromBPM(60);
         updateDisplay();
         draw();
     </script>
